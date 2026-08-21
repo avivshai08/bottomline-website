@@ -62,7 +62,7 @@ export const IMAGES = {
   pfAudienceOwners: "/images/pf-audience-owners.png",
   pfAllocationTool: "/images/pf-allocation-tool-2.png",
   pfCta: "/images/cta-banner.jpg",
-  cfoHero: "/images/fractional-cfo-hero.png",
+  cfoHero: "/images/speaking.jpg",
   cfoDrawing1: "/images/cfo-drawing-1.png",
   cfoDrawing2: "/images/cfo-drawing-2.png",
   cfoDrawing3: "/images/cfo-drawing-3c.png",

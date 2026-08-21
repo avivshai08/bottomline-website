@@ -3461,13 +3461,9 @@ h3 {
 .cfo-hero__stage {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1677 / 844;
 }
 
 .cfo-hero__stage img {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: block;
   width: 100%;
   height: auto;
@@ -3475,13 +3471,15 @@ h3 {
 
 .cfo-hero__copy {
   position: absolute;
-  left: 22.3%;
-  top: 48%;
-  transform: translate(-50%, -50%);
-  width: max-content;
-  max-width: min(40%, 26rem);
+  left: 4%;
+  right: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(42%, 26rem);
+  max-width: 42%;
   direction: rtl;
   text-align: right;
+  color: var(--white);
 }
 
 .cfo-hero h1 {
@@ -3489,24 +3487,24 @@ h3 {
   font-size: clamp(2.1rem, 4.4vw, 3.2rem);
   font-weight: 800;
   line-height: 1.28;
-  color: var(--navy);
+  color: var(--white);
   margin: 0;
 }
 
 .cfo-hero h2 {
   font-family: Heebo, sans-serif;
   font-size: 1.5rem;
-  font-weight: 650;
+  font-weight: 800;
   line-height: 1.3;
-  color: var(--navy);
+  color: var(--white);
   margin: 4px 0 0;
 }
 
 .cfo-hero h3 {
   font-family: Heebo, sans-serif;
   font-size: 1.235rem;
-  font-weight: 400;
-  color: var(--teal-text);
+  font-weight: 800;
+  color: var(--white);
   margin: 0.55rem 0 0.7rem;
   line-height: 1.45;
   white-space: nowrap;
@@ -3515,9 +3513,9 @@ h3 {
 .cfo-hero p {
   font-family: Heebo, sans-serif;
   font-size: clamp(0.82rem, 1.15vw, 0.98rem);
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.55;
-  color: var(--navy);
+  color: var(--white);
   margin: 0;
 }
 
@@ -4110,49 +4108,30 @@ h3 {
     padding: 16px 0 8px;
   }
 
-  .cfo-hero__stage {
-    overflow: visible;
-    aspect-ratio: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .cfo-hero__stage img {
-    position: static;
-    width: 100%;
-    height: auto;
-    order: -1;
-  }
-
   .cfo-hero__copy {
-    position: static;
-    left: auto;
-    top: auto;
-    transform: none;
-    width: 100%;
-    max-width: none;
-    padding: 0 2px 4px;
+    left: 3.5%;
+    width: min(58%, 18rem);
+    max-width: 58%;
   }
 
   .cfo-hero h1 {
-    font-size: clamp(2.375rem, 9vw, 2.75rem);
+    font-size: clamp(1.2rem, 5.2vw, 1.7rem);
     line-height: 1.22;
   }
 
   .cfo-hero h2 {
-    font-size: 1.25rem;
+    font-size: clamp(0.85rem, 3.2vw, 1.05rem);
   }
 
   .cfo-hero h3 {
-    font-size: 1.125rem;
+    font-size: clamp(0.75rem, 2.8vw, 0.95rem);
     white-space: normal;
-    margin: 0.45rem 0 0.55rem;
+    margin: 0.35rem 0 0.45rem;
   }
 
   .cfo-hero p {
-    font-size: 1.125rem;
-    line-height: 1.55;
+    font-size: clamp(0.72rem, 2.6vw, 0.88rem);
+    line-height: 1.45;
   }
 }
 
