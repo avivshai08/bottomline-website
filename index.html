@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-round.png" />
+    <link rel="icon" type="image/png" href="/favicon-round.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon-round.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="אביב שי — השותף הפיננסי שלך. בהירות. החלטות. תוצאות."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300..900&family=Source+Sans+3:wght@300;400&family=Source+Sans+Pro:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Bottom line | בהירות. החלטות. תוצאות.</title>
+  </head>
+  <body>
+    <div id="root">
+      <p
+        id="boot"
+        style="font-family: Heebo, sans-serif; text-align: center; padding: 64px 24px; color: #001827"
+      >
+        Bottom line — טוען...
+      </p>
+    </div>
+    <script>
+      setTimeout(function () {
+        var boot = document.getElementById("boot");
+        if (!boot) return;
+        boot.textContent = "האתר לא נטען. רעננו את העמוד.";
+        boot.style.color = "#b42318";
+      }, 4000);
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
