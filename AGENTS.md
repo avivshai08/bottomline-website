@@ -27,6 +27,8 @@ Details: [`docs/purpose.md`](docs/purpose.md)
 - Vite HMR is **off**. After edits, hard-refresh `http://127.0.0.1:5173/` (not `localhost`).
 - Do not run drive-by refactors, dependency upgrades, or global CSS sweeps.
 
+**Models:** default to an efficient model (Composer 2.5 / Auto Cost). Spawn a subagent on **Grok 4.6 high** only when the task is actually challenging. Details: [`docs/cost.md`](docs/cost.md)
+
 Hard limits: [`docs/constraints.md`](docs/constraints.md)  
 Stack and commands: [`docs/development.md`](docs/development.md)
 
@@ -55,6 +57,7 @@ Tell the user to start a new session and that the next agent should begin with t
 | --- | --- |
 | What this project is | [`docs/purpose.md`](docs/purpose.md) |
 | How to work and hand off | [`docs/workflow.md`](docs/workflow.md) |
+| Models, tokens, exploration budget | [`docs/cost.md`](docs/cost.md) |
 | Do-not-break rules | [`docs/constraints.md`](docs/constraints.md) |
 | Type, color, header, CTA | [`docs/visual-system.md`](docs/visual-system.md) |
 | Per-page decisions | [`docs/pages.md`](docs/pages.md) |

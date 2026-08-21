@@ -9,6 +9,8 @@
 
 Recent commits plus `docs/` are enough. Do not mine old chat transcripts unless docs and git are silent.
 
+Prefer an efficient model for the parent session (Composer 2.5 or Auto Cost). Use Grok 4.6 high **only** as a subagent when the work is challenging — see [`cost.md`](cost.md).
+
 ## During the work
 
 - One request → one scoped change. Unrelated pages stay untouched.

@@ -6,6 +6,7 @@ Read **only** what the current task needs. Update the matching file when a decis
 | --- | --- |
 | [purpose.md](purpose.md) | You need the product goal or audience |
 | [workflow.md](workflow.md) | Starting a session, committing, or handing off |
+| [cost.md](cost.md) | Choosing a model, spawning subagents, keeping token use down |
 | [constraints.md](constraints.md) | Before any visual, copy, route, or asset change |
 | [visual-system.md](visual-system.md) | Type, color, header, CTA, frames, RTL |
 | [pages.md](pages.md) | Working on a specific page |
