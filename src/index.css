@@ -3467,6 +3467,10 @@ h3 {
   display: block;
   width: 100%;
   height: auto;
+  min-height: 260px;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: 18% 24%;
 }
 
 .cfo-hero__copy {
@@ -4106,6 +4110,12 @@ h3 {
 @media (max-width: 800px) {
   .cfo-hero {
     padding: 16px 0 8px;
+  }
+
+  .cfo-hero__stage img {
+    min-height: 0;
+    max-height: 250px;
+    object-position: 12% 26%;
   }
 
   .cfo-hero__copy {
