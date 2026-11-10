@@ -28,6 +28,7 @@ Do not change `BOOK_URL` or `ALLOC_TOOL_URL` in `src/content.ts`.
 ## Assets
 
 - **Do not delete** originals in `public/images/` or source files at the project root (PNGs/JPGs with spaces in the name, `speaking.jpg`, etc.).
+- `public/images/` holds **only images the site references** (everything in `public/` ships to Netlify). Retired or unused images go to `assets-archive/unused-public-images/` (`git mv`, never delete). To reuse one, move it back and add an `IMAGES` key.
 - New images: copy into `public/images/` with a stable kebab-case name, then point `IMAGES` at `/images/…`.
 - **Do not lazy-load the hero image** on any page.
 
