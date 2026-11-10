@@ -6,8 +6,8 @@ export default function Logo({ className = "" }: { className?: string }) {
       className={className}
       src={IMAGES.logoMark}
       alt=""
-      width={48}
-      height={48}
+      width={1095}
+      height={1095}
     />
   );
 }

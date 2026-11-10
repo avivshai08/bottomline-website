@@ -11,6 +11,7 @@ Read **only** what the current task needs. Update the matching file when a decis
 | [visual-system.md](visual-system.md) | Type, color, header, CTA, frames, RTL |
 | [pages.md](pages.md) | Working on a specific page |
 | [development.md](development.md) | Dev server, build, deploy, git, image pipeline |
+| [seo.md](seo.md) | Google / AI crawl, prerender, sitemap, Netlify domain |
 
 ## Keep these docs small
 

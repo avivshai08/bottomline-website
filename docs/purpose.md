@@ -14,6 +14,6 @@ Home (`/`) is the About page. Contact is `aviv@bottomline.finance`.
 
 The site is a Vite + React rebuild of a Lovable-era design, refined in place: RTL Hebrew, approved illustrations, and a tight visual system. The job is to **finish and maintain that site**, not to start over.
 
-Live: [https://comfy-kleicha-6e4ced.netlify.app](https://comfy-kleicha-6e4ced.netlify.app)
+Live: [https://bottomline.finance](https://bottomline.finance)
 
 Deploy by building and uploading the **`dist`** folder to Netlify. There is no required git remote.

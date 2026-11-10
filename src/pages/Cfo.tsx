@@ -44,7 +44,7 @@ const HELP_ITEMS = [
   },
 ];
 
-const FAQ = [
+export const FAQ = [
   {
     q: "מה ההבדל בין CFO לרואה חשבון?",
     a: "רואה החשבון מתמקד בהכנת דו\"חות כספיים, בדיווחים לרשויות המס, ובציות העסק לרגולציה. לעומתו, ה-CFO מתמקד בעתיד העסק: תכנון, ניתוח, קבלת החלטות וליווי ההנהלה. שני התפקידים אינם חופפים אלא משלימים זה את זה.",
@@ -115,39 +115,31 @@ const EXPERTISE_ITEMS = [
   },
 ];
 
-const CASE_CARDS = [
-  {
-    title: "האתגר",
-    text: "צמיחה מהירה ללא תשתית פיננסית מסודרת",
-  },
-  {
-    title: "הפעולות",
-    text: "בניית מודלים, דוחות, תכנון תזרים ומעקב אחרי ביצועים",
-  },
-  {
-    title: "התוצאה",
-    text: "שיפור רווחיות של 27%, תזרים מזומנים יציב, וקבלת החלטות מדויקת",
-  },
-];
-
 export default function Cfo() {
   return (
     <>
       <section className="cfo-hero">
         <div className="container">
           <div className="cfo-hero__stage">
-            <img
-              src={IMAGES.cfoHero}
-              alt="שותף פיננסי ואסטרטגי ושירותי CFO במיקור חוץ"
-            />
+            <div className="cfo-hero__media">
+              <img
+                src={IMAGES.cfoHero}
+                alt="שותף פיננסי ואסטרטגי ושירותי CFO במיקור חוץ"
+              />
+            </div>
             <div className="cfo-hero__copy">
-              <h1>שותף פיננסי ואסטרטגי</h1>
-              <h2>ושירותי CFO במיקור חוץ</h2>
-              <h3>לצדך. לחשוב. להחליט. להוביל.</h3>
-              <p>
-                ניסיון פיננסי, ראייה רחבה וכלים מעשיים כדי לעזור לך לנווט את
-                העסק בביטחון ולממש את הפוטנציאל שלו.
-              </p>
+              <h1>
+                <span className="cfo-hero__name">שותף פיננסי ואסטרטגי</span>
+                <span className="cfo-hero__sub">ושירותי CFO במיקור חוץ</span>
+              </h1>
+              <h2>לצדך. לחשוב. להחליט. להוביל.</h2>
+              <h3>
+                ניסיון פיננסי, ראייה רחבה וכלים מעשיים
+                <br />
+                כדי לעזור לך לנווט את העסק בביטחון
+                <br />
+                ולממש את הפוטנציאל שלו.
+              </h3>
             </div>
           </div>
         </div>
@@ -213,8 +205,9 @@ export default function Cfo() {
               <div className="cfo-clarity__copy">
                 <h2>מרעש לבהירות</h2>
                 <p>
-                  הופכים נתונים מפוזרים לתמונה ברורה שמאפשרת להחליט נכון
-                  ובביטחון
+                  הופכים נתונים מפוזרים לתמונה ברורה
+                  <br />
+                  שמאפשרת להחליט נכון ובביטחון
                 </p>
               </div>
               <div className="cfo-clarity__compare">
@@ -245,7 +238,7 @@ export default function Cfo() {
                 </div>
               </div>
               <div className="cfo-clarity__photo">
-                <img src={IMAGES.lighthouse} alt="" />
+                <img src={IMAGES.lighthouse} alt="ליווי פיננסי שמאיר את התמונה העסקית" />
               </div>
             </div>
           </div>
@@ -292,32 +285,6 @@ export default function Cfo() {
                 לצמיחה, לשיפור ביצועים ולהגדלת ערך העסק.
               </p>
             </blockquote>
-          </div>
-        </section>
-
-        <section className="home-drawing-section">
-          <div className="container">
-            <div className="cfo-case">
-              <div className="cfo-case__copy">
-                <h2 className="cfo-case__title">ממספרים לתוצאות</h2>
-                <p className="cfo-case__kicker">דוגמה מהשטח</p>
-                <ul className="cfo-case__cards">
-                  {CASE_CARDS.map((item) => (
-                    <li key={item.title}>
-                      <h3>{item.title}</h3>
-                      <p>{item.text}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="cfo-case__visual">
-                <img
-                  className="cfo-case__bg"
-                  src={IMAGES.cfoFromNumbers}
-                  alt=""
-                />
-              </div>
-            </div>
           </div>
         </section>
 

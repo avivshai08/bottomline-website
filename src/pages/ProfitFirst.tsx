@@ -18,7 +18,7 @@ import Faq from "../components/Faq";
 import QuickAssessment from "../components/QuickAssessment";
 import { ALLOC_TOOL_URL, BOOK_URL, IMAGES } from "../content";
 
-const FAQ = [
+export const FAQ = [
   {
     q: "מה זה בכלל פרופיט פירסט, רווח לפני הכל?",
     a: `פרופיט פירסט היא שיטה לניהול פיננסי לעסקים שנולדה בארה"ב לפני כ-10 שנים, והיא מבוססת על ספר רב מכר באותו השם שתורגם לאחרונה גם לעברית תחת השם "רווח לפני הכל". השיטה כבר הוטמעה ביותר מ-1.5 מיליון עסקים ברחבי העולם, וכעת גם בישראל היא צוברת תאוצה. אז למה היא כל כך מיוחדת? התשובה פשוטה: כי היא מאפשרת לבעלי עסקים להרוויח יותר ולנהל את העסק בצורה יציבה ואחראית.
@@ -289,17 +289,17 @@ const STEPS = [
 const AUDIENCE = [
   {
     src: IMAGES.pfAudienceCash,
-    title: "עסקים רווחיים",
+    lines: ["עסקים", "רווחיים"] as const,
     text: "שלא נשאר להם כסף בחשבון הבנק",
   },
   {
     src: IMAGES.pfAudienceGrowth,
-    title: "עסקים בצמיחה",
+    lines: ["עסקים", "בצמיחה"] as const,
     text: "שרוצים להישאר בשליטה ולשמר רווחיות",
   },
   {
     src: IMAGES.pfAudienceOwners,
-    title: "בעלי עסקים",
+    lines: ["בעלי", "עסקים"] as const,
     text: "שרוצים שליטה פיננסית ושקט נפשי",
   },
 ] as const;
@@ -310,10 +310,12 @@ export default function ProfitFirst() {
       <section className="pf-hero">
         <div className="container">
           <div className="pf-hero__stage">
-            <img
-              src={IMAGES.pfJars}
-              alt="צנצנות Profit First: רווח, שכר בעלים, מסים והוצאות תפעול"
-            />
+            <div className="pf-hero__media">
+              <img
+                src={IMAGES.pfJars}
+                alt="אביב שי בהרצאה על Profit First"
+              />
+            </div>
             <div className="pf-hero__copy">
               <h1>
                 <span className="pf-hero__name" dir="ltr">
@@ -322,13 +324,15 @@ export default function ProfitFirst() {
                 <span>רווח הוא לא תוצאה.</span>
                 <span>רווח הוא החלטה.</span>
               </h1>
-              <p className="pf-lede">
+              <h2>שמים את הרווח בראש</h2>
+              <h3>
                 <span className="pf-brand" dir="ltr">
                   Profit First<sup className="pf-tm">©</sup>
                 </span>{" "}
-                מסייעת לבעלי עסקים להפוך רווח להרגל, לבנות שליטה פיננסית
-                ולצמוח בצורה בריאה ומבוקרת
-              </p>
+                מסייעת לבעלי עסקים להפוך רווח להרגל,
+                <br />
+                לבנות שליטה פיננסית ולצמוח בצורה בריאה ומבוקרת
+              </h3>
             </div>
           </div>
         </div>
@@ -571,15 +575,22 @@ export default function ProfitFirst() {
             <div className="pf-audience">
               <p className="pf-audience__kicker">למי זה מתאים?</p>
               <ul className="pf-audience__cards">
-                {AUDIENCE.map((item) => (
-                  <li key={item.title} className="pf-audience__card">
-                    <img src={item.src} alt={item.title} />
-                    <div className="pf-audience__caption">
-                      <h3>{item.title}</h3>
-                      <p>{item.text}</p>
-                    </div>
-                  </li>
-                ))}
+                {AUDIENCE.map((item) => {
+                  const title = `${item.lines[0]} ${item.lines[1]}`;
+                  return (
+                    <li key={title} className="pf-audience__card">
+                      <img src={item.src} alt={title} />
+                      <div className="pf-audience__caption">
+                        <h3>
+                          {item.lines[0]}
+                          <br />
+                          {item.lines[1]}
+                        </h3>
+                        <p>{item.text}</p>
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

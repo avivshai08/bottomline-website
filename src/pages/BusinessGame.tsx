@@ -1,14 +1,10 @@
-import {
-  BadgePercent,
-  BarChart3,
-  BookOpen,
-  Users,
-} from "lucide-react";
 import CtaDrawing from "../components/CtaDrawing";
 import Faq from "../components/Faq";
+import GameFormatChart from "../components/GameFormatChart";
+import GameGains from "../components/GameGains";
 import { IMAGES } from "../content";
 
-const FAQ = [
+export const FAQ = [
   {
     q: "למי מיועדת התוכנית?",
     a: "התוכנית מתאימה לתלמידי תיכון, למסגרות העשרה ולחברות וארגונים המעוניינים לפתח יכולות עסקיות וניהוליות. בחברות ניתן להתאים את התוכנית במיוחד לצוותי הנהלה ומנהלים שאינם מגיעים מרקע פיננסי.",
@@ -97,175 +93,32 @@ const AUDIENCE = [
   },
 ];
 
-const GAINS = [
-  {
-    label: "חשיבה אסטרטגית",
-    text: "קבלת החלטות עסקיות בתנאי אי-ודאות",
-    Icon: ChessIcon,
-  },
-  {
-    label: "הבנה פיננסית",
-    text: 'קריאת דו"חות כספיים, תקצוב ותמחור',
-    Icon: BadgePercent,
-  },
-  {
-    label: "ניתוח נתונים",
-    text: "מניתוח שוק למסקנות ולהחלטות עסקיות",
-    Icon: BarChart3,
-  },
-  {
-    label: "עבודת צוות",
-    text: "מנהיגות, הובלת צוותי הנהלה ושיתופי פעולה",
-    Icon: Users,
-  },
-  {
-    label: "אנגלית עסקית",
-    text: "כלים ומונחים מקצועיים בסביבה בינלאומית",
-    Icon: BookOpen,
-  },
-];
-
-function ChessIcon({
-  className,
-  strokeWidth = 1.5,
-}: {
-  className?: string;
-  strokeWidth?: number;
-}) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M3.5 21h8" />
-      <path d="M5 21v-8h5v8" />
-      <path d="M5 13h5" />
-      <path d="M5.5 13V9h4v4" />
-      <path d="M5.5 9V7h1v1.2h1.3V7h1.2v1.2H10V7h1v2" />
-      <path d="M13.5 21h7" />
-      <path d="M15 21v-5.2s.2-2 1.6-3.6c1.1-1.3 1.6-2.2 1.6-3.4 0-1.3-.9-2.2-2.2-2.2-1.5 0-2.4 1-2.8 2.4" />
-      <path d="M14.4 12.4h4.6" />
-      <path d="M17.4 6.6c.2-.7.7-1.2 1.4-1.4" />
-    </svg>
-  );
-}
-
-function FormatTeacherIcon() {
-  return (
-    <svg
-      className="game-format__icon"
-      viewBox="0 0 96 72"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="28" y="4" width="46" height="28" rx="2" />
-      <path d="M46 32v8" />
-      <path d="M38 44h16" />
-      <circle cx="22" cy="28" r="5" />
-      <path d="M22 33v12" />
-      <path d="M22 36l10-6" />
-      <path d="M18 45l4-12 4 12" />
-      <circle cx="12" cy="52" r="3.2" />
-      <path d="M7 66v-8a5 5 0 0 1 10 0v8" />
-      <circle cx="28" cy="54" r="3.2" />
-      <path d="M23 68v-8a5 5 0 0 1 10 0v8" />
-      <circle cx="44" cy="52" r="3.2" />
-      <path d="M39 66v-8a5 5 0 0 1 10 0v8" />
-    </svg>
-  );
-}
-
-function FormatTeamIcon() {
-  return (
-    <svg
-      className="game-format__icon"
-      viewBox="0 0 72 56"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <circle cx="36" cy="16" r="8" />
-      <path d="M22 48v-6a14 14 0 0 1 28 0v6" />
-      <circle cx="14" cy="20" r="6" />
-      <path d="M2 48v-5a11 11 0 0 1 16.5-9.5" />
-      <circle cx="58" cy="20" r="6" />
-      <path d="M70 48v-5a11 11 0 0 0-16.5-9.5" />
-    </svg>
-  );
-}
-
-function FormatPlayIcon() {
-  return (
-    <svg
-      className="game-format__icon game-format__icon--play"
-      viewBox="0 0 64 56"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <polygon points="12,6 56,28 12,50" />
-    </svg>
-  );
-}
-
-function FormatReviewIcon() {
-  return (
-    <svg
-      className="game-format__icon"
-      viewBox="0 0 64 64"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <circle cx="26" cy="26" r="16" />
-      <path d="m38 38 14 14" />
-      <path d="M14 28h6l3-7 4 12 3-6h6" />
-    </svg>
-  );
-}
-
 export default function BusinessGame() {
   return (
     <>
-      <div className="drawing-stack">
-        <section className="home-drawing-section">
-          <div className="container">
-            <div className="game-intro">
-              <div className="game-intro__copy">
-                <h1>ללמוד. להתנסות. להצליח.</h1>
-                <p className="game-intro__kicker">
-                  הפיננסים הופכים ברורים כשחווים אותם
-                </p>
-                <p className="game-intro__lede">
-                  סימולציית "משחקים עסקיים" מחברת בין תאוריה למציאות ומפתחת
-                  חשיבה עסקית, קבלת החלטות ועבודת צוות.
-                </p>
-              </div>
-              <div className="game-intro__art">
-                <img src={IMAGES.gameHero} alt="" />
-              </div>
+      <section className="game-intro">
+        <div className="container">
+          <div className="game-intro__stage">
+            <div className="game-intro__media">
+              <img
+                src={IMAGES.gameHeroPhoto}
+                alt="משחקים עסקים — סימולציה עסקית"
+              />
+            </div>
+            <div className="game-intro__copy">
+              <h1>ללמוד. להתנסות. להצליח.</h1>
+              <h2>הפיננסים הופכים ברורים כשחווים אותם</h2>
+              <h3>
+                סימולציית "משחקים עסקים" מחברת בין תיאוריה למציאות,
+                <br className="game-intro__lede-break" />{" "}
+                מפתחת חשיבה עסקית, קבלת החלטות ועבודת צוות
+              </h3>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
+      <div className="drawing-stack">
         <section className="home-drawing-section">
           <div className="container">
             <div className="game-about">
@@ -274,11 +127,11 @@ export default function BusinessGame() {
                 <img
                   className="game-about__bg"
                   src={IMAGES.mikesBikes}
-                  alt=""
+                  alt="סימולציית Mike's Bikes"
                 />
                 <div className="game-about__copy">
                   <p>
-                    תכנית <strong>משחקים עסקיים</strong> מזמינה אתכם לזירה
+                    תכנית <strong>משחקים עסקים</strong> מזמינה אתכם לזירה
                     האמיתית: סימולציה עסקית מתקדמת שבה אתם אלו שמקבלים את
                     ההחלטות! הצוות שלכם ינהל חברת אופני הרים בשוק תחרותי שמשתנה
                     בכל רגע.
@@ -293,7 +146,10 @@ export default function BusinessGame() {
                   <p>
                     כאן, כל החלטה שלכם קובעת אם תסיימו ברווח או בהפסד, תובילו את
                     השוק או תישארו מאחור והכל בסביבה מהנה, מלמדת, תחרותית ומלאת
-                    אדרנלין. דרך המשחק נלמד איך עובדים עסקים, נפתח חשיבה עסקית,
+                    אדרנלין.
+                  </p>
+                  <p>
+                    דרך המשחק נלמד איך עובדים עסקים, נפתח חשיבה עסקית,
                     עבודת צוות, מנהיגות וקבלת החלטות בתנאי אי ודאות.
                   </p>
                 </div>
@@ -312,8 +168,9 @@ export default function BusinessGame() {
               <div className="game-sims__head">
                 <h2>מהם סימולציות עסקיות?</h2>
                 <p>
-                  למידה חווייתית דרך התנסות, משחק ותחרות בסביבה שמדמה את המציאות
-                  העסקית
+                  למידה חווייתית דרך התנסות, משחק ותחרות
+                  <br />
+                  בסביבה שמדמה את המציאות העסקית
                 </p>
               </div>
               <ul className="game-sims__cards">
@@ -335,93 +192,14 @@ export default function BusinessGame() {
                 <h2>מבנה התוכנית</h2>
                 <p>8 מפגשים של למידה מעשית</p>
               </div>
-              <div className="game-format">
-                <div className="game-format__slot game-format__slot--top">
-                  <h3>מפגשי למידה</h3>
-                  <p>
-                    אסטרטגיה, שיווק, פיננסים
-                    <br />
-                    תמחור, תפעול
-                  </p>
-                  <FormatTeacherIcon />
-                </div>
-                <div className="game-format__slot game-format__slot--end">
-                  <div>
-                    <h3>עבודת צוות</h3>
-                    <p>
-                      ניתוח שוק
-                      <br />
-                      ניתוח מתחרים
-                      <br />
-                      קבלת החלטות
-                    </p>
-                  </div>
-                  <FormatTeamIcon />
-                </div>
-                <div className="game-format__cycle" aria-hidden="true">
-                  <svg viewBox="0 0 200 200">
-                    <g
-                      fill="none"
-                      stroke="#6EC8C8"
-                      strokeWidth="5"
-                      strokeLinecap="round"
-                    >
-                      <path d="M 48.4 72.8 A 62 62 0 0 1 138.1 47.4" />
-                      <path d="M 154.8 70.6 A 62 62 0 0 1 133.1 154.6" />
-                      <path d="M 97.4 162.0 A 62 62 0 0 1 38.0 100.0" />
-                    </g>
-                    <g fill="#6EC8C8">
-                      <polygon points="148.8,50.6 131.6,52.2 140.6,36.4" />
-                      <polygon points="122.2,160.8 130.2,146.2 139.4,159.0" />
-                      <polygon points="38.0,86.0 47.0,100.4 29.0,100.4" />
-                    </g>
-                  </svg>
-                </div>
-                <div className="game-format__slot game-format__slot--start">
-                  <FormatReviewIcon />
-                  <div>
-                    <h3>ניתוח ומשוב</h3>
-                    <p>
-                      בחינת התוצאות
-                      <br />
-                      הסקת מסקנות
-                    </p>
-                  </div>
-                </div>
-                <div className="game-format__slot game-format__slot--bottom">
-                  <FormatPlayIcon />
-                  <h3>הרצת סימולציה</h3>
-                  <p>
-                    הזנת החלטות במערכת
-                    <br />
-                    המערכת משקללת את כל ההחלטות
-                  </p>
-                </div>
-              </div>
+              <GameFormatChart />
             </div>
           </div>
         </section>
 
         <section className="home-drawing-section">
           <div className="container">
-            <div className="game-gains">
-              <div className="game-gains__head">
-                <h2>מה מרוויחים המשתתפים?</h2>
-                <p>כלים לחיים - מיומנויות שנשארות</p>
-              </div>
-              <ul className="game-gains__items">
-                {GAINS.map((item) => (
-                  <li key={item.label}>
-                    <item.Icon
-                      className="game-gains__icon"
-                      strokeWidth={1.5}
-                    />
-                    <h3>{item.label}</h3>
-                    <p>{item.text}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <GameGains />
           </div>
         </section>
 
@@ -432,7 +210,7 @@ export default function BusinessGame() {
               <ul className="game-audience__cards">
                 {AUDIENCE.map((item) => (
                   <li key={item.title}>
-                    <img src={item.src} alt="" />
+                    <img src={item.src} alt={item.title} />
                     <div>
                       <h3>{item.title}</h3>
                       <p>{item.text}</p>

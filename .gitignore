@@ -1,7 +1,12 @@
 node_modules
 dist
+dist-ssr
 .DS_Store
 *.local
 .env
 .env.*
 .tools
+photothumb.db
+
+# Old full-project backup zip (280 MB); git history replaces it
+src.zip

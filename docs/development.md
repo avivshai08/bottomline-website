@@ -8,10 +8,10 @@ Vite 6 + React 19 + TypeScript + React Router 7. Styles are global CSS in `src/i
 
 ```bash
 npm run dev      # http://127.0.0.1:5173/  (strictPort, HMR off)
-npm run build    # tsc --noEmit && vite build → dist/
+npm run build    # tsc --noEmit && vite build + SSR prerender → dist/
 ```
 
-Use **`127.0.0.1`**, not `localhost`. After code edits, **hard-refresh**; HMR is disabled in `vite.config.ts` on purpose. PNG/JPEG under most folders are not watched (except `public/`).
+Use **`127.0.0.1`**, not `localhost`. After code edits, **hard-refresh**; HMR is disabled in `vite.config.ts` on purpose. PNG/JPEG/SVG under most folders are not watched (except `public/`). Windows `photothumb.db` is ignored so Explorer thumbnails cannot crash the watcher. Root files like `icon profit.svg` are originals — copy into `public/images/` with kebab-case names.
 
 ## Assets
 
@@ -20,13 +20,15 @@ Use **`127.0.0.1`**, not `localhost`. After code edits, **hard-refresh**; HMR is
 3. Add or update a key on `IMAGES` in `src/content.ts`.
 4. Reference `IMAGES.foo` from the page. Never invent a path that is not in `public/`.
 
-`public/_redirects` is for Netlify SPA fallback.
+`public/_redirects` must not rewrite every path to `index.html`. Prerendered folders (`cfo/index.html`, …) and `404.html` need to be reached as real files. See [`seo.md`](seo.md).
 
 ## Deploy
 
-`npm run build`, then upload the **`dist`** folder to Netlify. Production: `https://comfy-kleicha-6e4ced.netlify.app`.
+`npm run build`, then upload the **`dist`** folder to Netlify. Production: `https://bottomline.finance`.
 
-`.gitignore` excludes `node_modules`, `dist`, `.env*`, `.tools`, `*.local`.
+After a build, confirm `dist/cfo/index.html` (and the other routes) contain the Hebrew page copy, not only “טוען”.
+
+`.gitignore` excludes `node_modules`, `dist`, `dist-ssr`, `.env*`, `.tools`, `*.local`.
 
 ## Git
 

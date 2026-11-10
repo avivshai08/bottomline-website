@@ -21,18 +21,22 @@ export default function Faq({
         <div className="faq">
           {items.map((item, i) => {
             const isOpen = open === i;
+            const panelId = `faq-a-${i}`;
             return (
               <div key={item.q} className={`faq__item${isOpen ? " is-open" : ""}`}>
                 <button
                   type="button"
                   className="faq__q"
                   aria-expanded={isOpen}
+                  aria-controls={panelId}
                   onClick={() => setOpen(isOpen ? null : i)}
                 >
                   <span>{item.q}</span>
                   <ChevronDown size={20} />
                 </button>
-                {isOpen && <div className="faq__a">{item.a}</div>}
+                <div id={panelId} className="faq__a">
+                  {item.a}
+                </div>
               </div>
             );
           })}

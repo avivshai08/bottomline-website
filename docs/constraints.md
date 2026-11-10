@@ -13,6 +13,9 @@ Keep these paths and nav labels:
 | Fractional CFO | `/cfo` | שותף פיננסי |
 | Business simulation | `/business-game` | משחקים עסקים |
 | Contact | `/contact` | צור קשר |
+| Game landing (no nav) | `/hugim` | — |
+
+`/mashakim` redirects to `/hugim`. Unknown URLs render the 404 page. Do not redirect them to `/`.
 
 Do not change `BOOK_URL` or `ALLOC_TOOL_URL` in `src/content.ts`.
 

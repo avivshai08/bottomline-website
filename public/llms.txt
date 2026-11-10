@@ -1,0 +1,17 @@
+# Bottom line
+
+> Hebrew finance-advisory site for Aviv Shai (אביב שי). Fractional / outsourced CFO, Profit First (רווח לפני הכל), and facilitated business-simulation programs.
+
+The site is RTL Hebrew. Contact: aviv@bottomline.finance
+
+## Pages
+
+- [אודות / About](https://bottomline.finance/): Aviv Shai — השותף הפיננסי שלך. Helps business owners and CEOs understand the numbers, decide better, and lead to results. 25+ years in finance, FP&A, and finance leadership in Israel and the US.
+- [שותף פיננסי / Fractional CFO](https://bottomline.finance/cfo): Outsourced CFO and strategic finance partner — cash flow, planning, pricing, fundraising support, and ongoing advisory. Complements the accountant; does not replace tax/compliance reporting.
+- [רווח לפני הכל / Profit First](https://bottomline.finance/profit-first): Implementation of the Profit First method in Hebrew. Hebrew edition of Mike Michalowicz’s book: https://www.profitfirst.co.il/%d7%94%d7%a1%d7%a4%d7%a8-%d7%a8%d7%95%d7%95%d7%97-%d7%9c%d7%a4%d7%a0%d7%99-%d7%94%d7%9b%d7%9c/ Allocation tool: https://app.profitfirst.finance
+- [משחקים עסקים / Business simulation](https://bottomline.finance/business-game): Facilitated Mike’s Bikes (Smartsims) programs for companies, students, schools, and enrichment — 8-session format or a one-day event.
+- [צור קשר / Contact](https://bottomline.finance/contact): Short intro call. Email aviv@bottomline.finance
+
+## Optional
+
+- [llms-full.txt](https://bottomline.finance/llms-full.txt): longer service and FAQ summary

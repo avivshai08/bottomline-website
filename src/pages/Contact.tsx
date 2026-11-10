@@ -1,7 +1,8 @@
 import { FormEvent, useEffect, useState } from "react";
-import { CalendarDays, Clock3, Target } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import WhatsAppIcon from "../components/WhatsAppIcon";
 import CtaButton from "../components/CtaButton";
-import { CTA_LABEL } from "../content";
+import { CONTACT, CTA_LABEL } from "../content";
 
 const SERVICES = [
   "שותף פיננסי (CFO במיקור חוץ)",
@@ -164,17 +165,39 @@ export default function Contact() {
             </CtaButton>
           </form>
 
-          <div className="trust">
-            <span>
-              <CalendarDays size={18} /> פגישה ללא התחייבות
-            </span>
-            <span>
-              <Clock3 size={18} /> שיחה של 30 דקות
-            </span>
-            <span>
-              <Target size={18} /> מיקוד ביעדים של העסק שלך
-            </span>
-          </div>
+          <aside className="contact-direct" aria-labelledby="contact-direct-title">
+            <h2 id="contact-direct-title">או צרו קשר ישירות</h2>
+            <ul>
+              <li>
+                <a href={`tel:${CONTACT.phoneTel}`}>
+                  <span className="contact-direct__icon" aria-hidden="true">
+                    <Phone strokeWidth={1.75} />
+                  </span>
+                  <span dir="ltr">{CONTACT.phoneDisplay}</span>
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${CONTACT.email}`}>
+                  <span className="contact-direct__icon" aria-hidden="true">
+                    <Mail strokeWidth={1.75} />
+                  </span>
+                  <span dir="ltr">{CONTACT.email}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT.whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="contact-direct__icon" aria-hidden="true">
+                    <WhatsAppIcon />
+                  </span>
+                  <span>{CONTACT.whatsappLabel}</span>
+                </a>
+              </li>
+            </ul>
+          </aside>
         </div>
       </section>
     </div>

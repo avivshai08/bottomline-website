@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import Seo from "./Seo";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -14,6 +15,7 @@ function ScrollToTop() {
 export default function Layout() {
   return (
     <>
+      <Seo />
       <ScrollToTop />
       <Header />
       <main>

@@ -154,8 +154,8 @@ export default function About() {
         <div className="container home-cred__grid">
           <div className="home-cred__media">
             <img
-              src={IMAGES.presenting}
-              alt="אביב שי בהרצאה על רווחיות וקבלת החלטות"
+              src={IMAGES.presentingHd}
+              alt="אביב שי, השותף הפיננסי שלך"
               loading="lazy"
             />
           </div>
@@ -187,8 +187,9 @@ export default function About() {
               <div className="about-approach__title">
                 <h2 id="about-approach-title">הגישה שלי</h2>
                 <p>
-                  ניסיון פיננסי של החברות
-                  הגדולות לטובת העסק שלך
+                  ניסיון פיננסי של החברות הגדולות
+                  <br />
+                  לטובת העסק שלך
                 </p>
               </div>
               <div className="about-approach__copy">
@@ -241,8 +242,13 @@ export default function About() {
             <div className="about-why">
               <h2 id="about-why-title">למה לעבוד איתי?</h2>
               <p className="about-why__lede">
-                אני מייצר בהירות, מחבר בין מספרים להחלטות,
-                בין היום למחר ובין אסטרטגיה לביצוע.
+                אני מייצר בהירות, מחבר בין מספרים{" "}
+                <span className="about-why__keep">
+                  להחלטות,{" "}
+                  <br className="about-why__lede-break" />
+                  בין היום למחר
+                </span>{" "}
+                ובין אסטרטגיה לביצוע.
               </p>
               <ul className="about-why__grid">
                 {WHY.map((item) => (

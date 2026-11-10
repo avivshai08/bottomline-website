@@ -62,4 +62,5 @@ Tell the user to start a new session and that the next agent should begin with t
 | Type, color, header, CTA | [`docs/visual-system.md`](docs/visual-system.md) |
 | Per-page decisions | [`docs/pages.md`](docs/pages.md) |
 | Dev server, build, Netlify, git | [`docs/development.md`](docs/development.md) |
+| Google / AI search, prerender | [`docs/seo.md`](docs/seo.md) |
 | Shared copy and image keys | [`src/content.ts`](src/content.ts) |
