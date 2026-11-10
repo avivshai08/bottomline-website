@@ -28,10 +28,12 @@ Use **`127.0.0.1`**, not `localhost`. After code edits, **hard-refresh**; HMR is
 
 After a build, confirm `dist/cfo/index.html` (and the other routes) contain the Hebrew page copy, not only “טוען”.
 
-`.gitignore` excludes `node_modules`, `dist`, `dist-ssr`, `.env*`, `.tools`, `*.local`.
+`.gitignore` excludes `node_modules`, `dist`, `dist-ssr`, `.env*`, `.tools`, `*.local`, `photothumb.db`, `src.zip`.
 
 ## Git
 
-Repo root is this folder. Default branch is `master`. There may be no remote; do not add or push one unless asked.
+Repo root is this folder. Branch is `main`, backed up to the private GitHub repo `https://github.com/avivshai08/bottomline-website` (`origin`). Push (`git push`) only when the user asks.
+
+`src.zip` (old 280 MB backup) is git-ignored; GitHub rejects files over 100 MB, so never commit large archives.
 
 After a large unit of work, commit with a **why** message (see `docs/workflow.md`). Do not update `git config`.
