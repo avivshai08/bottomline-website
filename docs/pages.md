@@ -19,7 +19,7 @@ FAQ answers on CFO / Profit First / Business game stay in the HTML and are colla
 
 ## Fractional CFO — `/cfo`
 
-- Hero image: `IMAGES.cfoHero` → `/images/cfo-hero-2.png` (root original `cfo hero 2.png` kept). Previous `speaking.jpg` and `fractional-cfo-hero.png` kept, unused.
+- Hero image: `IMAGES.cfoHero` → `/images/cfo-hero-2.png` (original `original-images/cfo hero 2.png`). Previous `speaking.jpg` and `fractional-cfo-hero.png` are in `assets-archive/unused-public-images/`.
 - Hero matches Profit First / Business Game: full `.container` width, desktop and mobile `aspect-ratio` `--hero-ar` (`8 / 3`; previous desktop `12 / 5`, previous mobile `3 / 2`). Copy is **overlaid on the left** (desktop). Shared overlay type: `h1` navy `800` (שותף פיננסי ואסטרטגי / ושירותי CFO במיקור חוץ), `h2` **לצדך. לחשוב. להחליט. להוביל.** `--teal-text` `400` one line, `h3` navy description (forced break after **בביטחון** on desktop and mobile). Desktop: left of the photo is 78% transparent (CSS mask, 22% opacity) so the teal tagline reads. Mobile (`max-width: 800px`): **clean photo, no mask** — image on top, then HTML copy.
 - Do not lazy-load this hero.
 - Clarity block (`.cfo-clarity__copy`): **מרעש לבהירות** and the lede are **physical left**. Lede breaks after **ברורה**.

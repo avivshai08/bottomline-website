@@ -23,7 +23,7 @@ Details: [`docs/purpose.md`](docs/purpose.md)
 
 - Touch only the page, component, or CSS block named in the request.
 - Prefer HTML/CSS over new images when a diagram or formula can be drawn in code.
-- Copy new photos into `public/images/` and point `IMAGES` at them. **Never delete** originals in `public/images/` or at the project root.
+- Copy new photos into `public/images/` and point `IMAGES` at them. **Never delete** originals in `public/images/` or `original-images/`.
 - Vite HMR is **off**. After edits, hard-refresh `http://127.0.0.1:5173/` (not `localhost`).
 - Do not run drive-by refactors, dependency upgrades, or global CSS sweeps.
 

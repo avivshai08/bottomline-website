@@ -11,7 +11,7 @@ npm run dev      # http://127.0.0.1:5173/  (strictPort, HMR off)
 npm run build    # tsc --noEmit && vite build + SSR prerender → dist/
 ```
 
-Use **`127.0.0.1`**, not `localhost`. After code edits, **hard-refresh**; HMR is disabled in `vite.config.ts` on purpose. PNG/JPEG/SVG under most folders are not watched (except `public/`). Windows `photothumb.db` is ignored so Explorer thumbnails cannot crash the watcher. Root files like `icon profit.svg` are originals — copy into `public/images/` with kebab-case names.
+Use **`127.0.0.1`**, not `localhost`. After code edits, **hard-refresh**; HMR is disabled in `vite.config.ts` on purpose. PNG/JPEG/SVG under most folders are not watched (except `public/`). Windows `photothumb.db` is ignored so Explorer thumbnails cannot crash the watcher. Files in `original-images/` (e.g. `icon profit.svg`) are originals — copy into `public/images/` with kebab-case names.
 
 ## Assets
 
