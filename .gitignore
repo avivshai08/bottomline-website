@@ -10,3 +10,5 @@ photothumb.db
 
 # Old full-project backup zip (280 MB); git history replaces it
 src.zip
+desktop.ini
+~$*
