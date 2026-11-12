@@ -14,6 +14,7 @@ Keep these paths and nav labels:
 | Business simulation | `/business-game` | משחקים עסקים |
 | Contact | `/contact` | צור קשר |
 | Game landing (no nav) | `/hugim` | — |
+| App landing (no nav) | `/system` | — |
 
 `/mashakim` redirects to `/hugim`. Unknown URLs render the 404 page. Do not redirect them to `/`.
 

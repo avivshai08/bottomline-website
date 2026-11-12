@@ -6,15 +6,20 @@ import ProfitFirst from "./pages/ProfitFirst";
 import Cfo from "./pages/Cfo";
 import BusinessGame from "./pages/BusinessGame";
 import GameLanding from "./pages/GameLanding";
+import SystemLanding from "./pages/SystemLanding";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { SYSTEM_SIGNUP_URL } from "./content";
 
 export default function App() {
   return (
     <Routes>
       <Route path="/mashakim" element={<Navigate to="/hugim" replace />} />
-      <Route element={<LandingLayout />}>
+      <Route element={<LandingLayout cta={{ label: "להרשמה", href: "#register" }} />}>
         <Route path="/hugim" element={<GameLanding />} />
+      </Route>
+      <Route element={<LandingLayout cta={{ label: "לניסיון חינם", href: SYSTEM_SIGNUP_URL }} />}>
+        <Route path="/system" element={<SystemLanding />} />
       </Route>
       <Route element={<Layout />}>
         <Route path="/" element={<About />} />

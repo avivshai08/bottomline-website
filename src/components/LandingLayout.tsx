@@ -11,7 +11,7 @@ function ScrollToTop() {
   return null;
 }
 
-export default function LandingLayout() {
+export default function LandingLayout({ cta }: { cta: { label: string; href: string } }) {
   return (
     <>
       <Seo />
@@ -21,9 +21,9 @@ export default function LandingLayout() {
           <span className="brand" aria-label="Bottom line">
             <Brand />
           </span>
-          <a className="cta-btn" href="#register">
+          <a className="cta-btn" href={cta.href}>
             <span className="cta-btn__arrow" aria-hidden="true" />
-            להרשמה
+            {cta.label}
           </a>
         </div>
       </header>

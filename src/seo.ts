@@ -1,8 +1,9 @@
-import { ALLOC_TOOL_URL, BOOK_URL, IMAGES } from "./content";
+import { ALLOC_TOOL_URL, BOOK_URL, IMAGES, SYSTEM_SIGNUP_URL, SYSTEM_VIDEO } from "./content";
 import type { FaqItem } from "./components/Faq";
 import { FAQ as businessGameFaq } from "./pages/BusinessGame";
 import { FAQ as cfoFaq } from "./pages/Cfo";
 import { FAQ as profitFirstFaq } from "./pages/ProfitFirst";
+import { FAQ as systemFaq } from "./pages/SystemLanding";
 
 export const SITE_ORIGIN = "https://bottomline.finance";
 
@@ -13,6 +14,7 @@ export const PRERENDER_ROUTES = [
   "/business-game",
   "/contact",
   "/hugim",
+  "/system",
 ] as const;
 
 export type PageSeo = {
@@ -243,6 +245,42 @@ const PAGES: Record<string, PageSeo> = {
       "/hugim",
       "משחקים עסקים — הרשמה לתוכנית | Bottom line",
       "תכנית משחקים עסקים: סימולציה עסקית בימי ראשון פעם בשבועיים, מגיל 17, 4 חודשים.",
+    ),
+  },
+  "/system": {
+    path: "/system",
+    title: "מערכת Bottom line — ניהול תזרים מזומנים לעסק ולמשק הבית",
+    description:
+      "מעלים דפי בנק וכרטיסי אשראי, מאשרים סיווג בלחיצה, קובעים יעדים ורואים בלוח בקרה אחד כמה באמת נשאר בסוף החודש. 30 יום ניסיון ללא תשלום.",
+    ogImage: abs(IMAGES.systemSnapshot),
+    robots: "index, follow",
+    jsonLd: graph(
+      "/system",
+      "מערכת Bottom line — ניהול תזרים מזומנים לעסק ולמשק הבית",
+      "מערכת לניהול תזרים מזומנים לעסק ולמשק הבית: העלאת דפי בנק ואשראי, סיווג תנועות, יעדים ולוח בקרה פיננסי.",
+      [
+        {
+          "@type": "WebApplication",
+          "@id": `${SITE_ORIGIN}/system#app`,
+          name: "Bottom line",
+          url: SYSTEM_SIGNUP_URL,
+          applicationCategory: "FinanceApplication",
+          operatingSystem: "Web",
+          inLanguage: "he",
+        },
+        {
+          "@type": "VideoObject",
+          "@id": `${SITE_ORIGIN}/system#video`,
+          name: "Bottom line — סרטון הדגמה",
+          description: "סיור במערכת Bottom line: העלאת נתונים, סיווג, יעדים ולוח הבקרה הפיננסי.",
+          thumbnailUrl: abs(IMAGES.systemVideoPoster),
+          contentUrl: abs(SYSTEM_VIDEO),
+          uploadDate: "2026-11-12",
+          duration: "PT2M33S",
+          inLanguage: "he",
+        },
+        faqLd("/system", systemFaq),
+      ],
     ),
   },
 };

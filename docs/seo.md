@@ -17,7 +17,7 @@ The site is a React SPA. `npm run build` prerenders the public routes into HTML 
 | File | Purpose |
 | --- | --- |
 | `public/robots.txt` | Allow search and AI bots; sitemap URL |
-| `public/sitemap.xml` | Five public URLs |
+| `public/sitemap.xml` | Public URLs, including the `/hugim` and `/system` landings |
 | `public/llms.txt` | Short entity file for AI crawlers |
 | `public/llms-full.txt` | Longer factual summary |
 

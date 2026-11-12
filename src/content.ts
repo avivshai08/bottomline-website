@@ -40,7 +40,17 @@ export const IMAGES = {
   gameHeroPhoto: "/images/image-26.png",
   tealMarker: "/images/teal-marker.png",
   mikesBikes: "/images/business-game-hero.jpg",
+  systemVideoPoster: "/images/system-video-poster.jpg",
+  systemUpload: "/images/system-upload.jpg",
+  systemReview: "/images/system-review.jpg",
+  systemGoals: "/images/system-goals.jpg",
+  systemSnapshot: "/images/system-snapshot.jpg",
 };
+
+export const SYSTEM_VIDEO = "/videos/bottom-line-system.mp4";
+
+/** New users sign in with Google here; the app then offers the plans and the free trial. */
+export const SYSTEM_SIGNUP_URL = "https://app.bottomline.finance/login";
 
 export const BOOK_URL =
   "https://www.profitfirst.co.il/%d7%94%d7%a1%d7%a4%d7%a8-%d7%a8%d7%95%d7%95%d7%97-%d7%9c%d7%a4%d7%a0%d7%99-%d7%94%d7%9b%d7%9c/";

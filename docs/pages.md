@@ -51,3 +51,12 @@ Standalone registration landing for the evening **משחקים עסקים** prog
 - Hero overlay is `h1` **משחקים** / **עסקים** on two lines (`800`, +30% size), **physical left** type inside the box. Box is centered in the faded right band (`left: 76%` desktop / `72%` mobile, `translate(-50%, -50%)`). Teal brush `IMAGES.tealMarker` → `/images/teal-marker.png` sits **under** the photo, **centered** (root original `teal marker.png` kept). Below the marker: **יש לכם מה שצריך כדי לנצח?** (`.hugim-tag`, teal, no **את**).
 - Mobile (`max-width: 800px`) only: that title still overlays the photo on the **physical right**. No text panel. The photo fades gradually left-to-right (opacity mask, instructor stays sharp). Crop stays `--hero-ar` `8 / 3`. `object-position` `32% 40%`.
 - Disclaimers live in **חשוב לדעת** (`.hugim-notes`) after the logistics facts, before the host: footnote style (small muted type, no cards). English, full-program commitment, min 15 participants. Host photo: same `IMAGES.presentingHd` as About.
+
+## App landing — `/system`
+
+Standalone landing for the **Bottom line app** (app.bottomline.finance), built like `/hugim`: own `LandingLayout` (logo + **לניסיון חינם**), not in `NAV`, header or footer. Trial buttons go to `SYSTEM_SIGNUP_URL` (the app's Google sign-in, which then offers the plans); the advisor plan uses the site CTA **בואו נדבר** → `/contact`.
+
+- Copy follows the marketing video's voiceover (`MoneySystem/demo/client-video/VOICEOVER.md`). Facts only: supported banks/cards, plan scopes and privacy answers come from the app's code and privacy page. **No prices** — the app does not show them either.
+- Video: `SYSTEM_VIDEO` → `public/videos/bottom-line-system.mp4`, a web encode (~16 MB, silent for now) of `Bottom-line-demo-v3.mp4`, poster `IMAGES.systemVideoPoster` (frame at 0:20). When the voiceover version is ready, replace the MP4 under the same name.
+- Screens (`IMAGES.systemUpload` / `systemReview` / `systemGoals` / `systemSnapshot`) are the top 16:10 of the video's demo-data screenshots, scaled to 1440×900, with a "נתוני הדגמה" note under them.
+- Order: hero + video, navy problem line, four areas, how it works (4 alternating rows), banks, plans, FAQ, navy closing CTA.
