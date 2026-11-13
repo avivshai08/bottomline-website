@@ -45,6 +45,9 @@ export const IMAGES = {
   systemReview: "/images/system-review.jpg",
   systemGoals: "/images/system-goals.jpg",
   systemSnapshot: "/images/system-snapshot.jpg",
+  systemVsGoals: "/images/system-vs-goals.jpg",
+  systemSources: "/images/system-sources.jpg",
+  systemTrends: "/images/system-trends.jpg",
 };
 
 export const SYSTEM_VIDEO = "/videos/bottom-line-system.mp4";

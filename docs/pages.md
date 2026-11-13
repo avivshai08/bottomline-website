@@ -54,9 +54,10 @@ Standalone registration landing for the evening **משחקים עסקים** prog
 
 ## App landing — `/system`
 
-Standalone landing for the **Bottom line app** (app.bottomline.finance), built like `/hugim`: own `LandingLayout` (logo + **לניסיון חינם**), not in `NAV`, header or footer. Trial buttons go to `SYSTEM_SIGNUP_URL` (the app's Google sign-in, which then offers the plans); the advisor plan uses the site CTA **בואו נדבר** → `/contact`.
+Standalone landing for the **Bottom line app** (app.bottomline.finance), built like `/hugim`: own `LandingLayout` (logo + **חודש ראשון חינם**), not in `NAV`, header or footer. Trial buttons go to `SYSTEM_SIGNUP_URL` (the app's Google sign-in, which then offers the plans); the advisor plan uses the site CTA **בואו נדבר** → `/contact`.
 
-- Copy follows the marketing video's voiceover (`MoneySystem/demo/client-video/VOICEOVER.md`). Facts only: supported banks/cards, plan scopes and privacy answers come from the app's code and privacy page. **No prices** — the app does not show them either.
+- Copy follows the marketing video's voiceover (`MoneySystem/demo/client-video/VOICEOVER.md`). Facts only: supported banks/cards, plan scopes and privacy answers come from the app's code and privacy page. Prices are the user's (2026-11-13): בסיסי 69 ₪/month, מתקדם 139 ₪/month, first month free; יועץ shows **צרו קשר** only.
 - Video: `SYSTEM_VIDEO` → `public/videos/bottom-line-system.mp4`, a web encode (~16 MB, silent for now) of `Bottom-line-demo-v3.mp4`, poster `IMAGES.systemVideoPoster` (frame at 0:20). When the voiceover version is ready, replace the MP4 under the same name.
-- Screens (`IMAGES.systemUpload` / `systemReview` / `systemGoals` / `systemSnapshot`) are the top 16:10 of the video's demo-data screenshots, scaled to 1440×900, with a "נתוני הדגמה" note under them.
-- Order: hero + video, navy problem line, four areas, how it works (4 alternating rows), banks, plans, FAQ, navy closing CTA.
+- Screens (`IMAGES.systemUpload` / `systemReview` / `systemGoals`, and the dashboard tour's `systemSnapshot` / `systemVsGoals` / `systemSources` / `systemTrends`) are the top 16:10 of the video's demo-data screenshots, scaled to 1440×900, with a "נתוני הדגמה" note under them.
+- Look (user asked for a more designed page, 2026-11-13): this page alone has its own `.sys-*` styles — navy hero with the video small (≤600px) in an app-window frame, a play overlay and a **צפייה במסך מלא** button; floating UI chips; sections fade in on scroll (visible without JS, off for reduced motion). Bigger `h2`s than the site recipe are intentional here.
+- Order: hero + video + bank strip, chaos → clarity, four areas + business/household band, three numbered steps, navy dashboard tour (four clickable tabs), plans (מתקדם highlighted), FAQ, navy closing CTA.

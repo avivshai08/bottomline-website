@@ -18,7 +18,7 @@ export default function App() {
       <Route element={<LandingLayout cta={{ label: "להרשמה", href: "#register" }} />}>
         <Route path="/hugim" element={<GameLanding />} />
       </Route>
-      <Route element={<LandingLayout cta={{ label: "לניסיון חינם", href: SYSTEM_SIGNUP_URL }} />}>
+      <Route element={<LandingLayout cta={{ label: "חודש ראשון חינם", href: SYSTEM_SIGNUP_URL }} />}>
         <Route path="/system" element={<SystemLanding />} />
       </Route>
       <Route element={<Layout />}>
