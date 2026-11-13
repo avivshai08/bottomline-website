@@ -6371,3 +6371,85 @@ h3 {
     display: none;
   }
 }
+
+/* /system — phones: steps and plans become swipeable rows with dots */
+.sys-dots {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .sys-steps,
+  .sys-plans {
+    display: flex;
+    gap: 14px;
+    max-width: none;
+    margin-inline: -20px;
+    padding: 22px 20px 28px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .sys-steps::-webkit-scrollbar,
+  .sys-plans::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sys-step,
+  .sys-step:nth-child(even),
+  .sys-plans > li {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
+
+  .sys-step,
+  .sys-step:nth-child(even) {
+    align-content: start;
+    gap: 18px;
+    padding: 24px 20px;
+    border-radius: 20px;
+    background: var(--gray);
+  }
+
+  .sys-steps [data-reveal].is-pending {
+    opacity: 1;
+    transform: none;
+  }
+
+  .sys-step__num {
+    font-size: 3rem;
+    margin-bottom: 8px;
+  }
+
+  .sys-step__copy > p:last-child {
+    font-size: 1rem;
+  }
+
+  .sys-both {
+    margin-bottom: 40px;
+  }
+
+  .sys-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .sys-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(0, 24, 39, 0.2);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+
+  .sys-dots button.is-active {
+    width: 24px;
+    background: var(--teal);
+  }
+}

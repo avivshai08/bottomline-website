@@ -85,7 +85,7 @@ const PLANS = [
   },
   {
     name: "יועץ",
-    scope: "לרואי חשבון וליועצים",
+    scope: "לרואי חשבון וליועצים פיננסיים",
     features: ["כל מה שיש במסלול המתקדם", "ליווי כמה לקוחות במערכת אחת", "גישה לנתונים שהלקוח שיתף איתכם"],
   },
 ];
@@ -93,7 +93,7 @@ const PLANS = [
 export const FAQ = [
   {
     q: "למי זה מתאים?",
-    a: "לכל מי שרוצה לקבל בהירות ושליטה על הכספים שלו, בין אם בעסק ובין אם בבית: לבעלי עסקים — עוסק פטור, עוסק מורשה או חברה — שרוצים לדעת כמה באמת נשאר להם בסוף החודש, ולמי שרוצה לנהל באותה מערכת גם את התקציב של משק הבית. מסלול יועץ מיועד לרואי חשבון וליועצים שמלווים כמה לקוחות.",
+    a: "לכל מי שרוצה לקבל בהירות ושליטה על הכספים שלו, בין אם בעסק ובין אם בבית: לבעלי עסקים — עוסק פטור, עוסק מורשה או חברה — שרוצים לדעת כמה באמת נשאר להם בסוף החודש, ולמי שרוצה לנהל באותה מערכת גם את התקציב של משק הבית. מסלול יועץ מיועד לרואי חשבון וליועצים פיננסיים שמלווים כמה לקוחות.",
   },
   {
     q: "כמה זה עולה?",
@@ -238,6 +238,52 @@ function DashboardTour() {
   );
 }
 
+/** On phones the steps and plans become a swipeable row; tracks which card is in view. */
+function useSwipe<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const row = ref.current;
+    if (!row) return;
+    const onScroll = () => {
+      const box = row.getBoundingClientRect();
+      const mid = box.left + box.width / 2;
+      const distances = Array.from(row.children, (child) => {
+        const r = child.getBoundingClientRect();
+        return Math.abs(r.left + r.width / 2 - mid);
+      });
+      setActive(distances.indexOf(Math.min(...distances)));
+    };
+    row.addEventListener("scroll", onScroll, { passive: true });
+    return () => row.removeEventListener("scroll", onScroll);
+  }, []);
+
+  function go(index: number) {
+    const card = ref.current?.children[index] as HTMLElement | undefined;
+    card?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }
+
+  return { ref, active, go };
+}
+
+function SwipeDots({ count, active, go, label }: { count: number; active: number; go: (i: number) => void; label: string }) {
+  return (
+    <div className="sys-dots">
+      {Array.from({ length: count }, (_, i) => (
+        <button
+          key={i}
+          type="button"
+          className={i === active ? "is-active" : undefined}
+          aria-label={`${label} ${i + 1}`}
+          aria-current={i === active}
+          onClick={() => go(i)}
+        />
+      ))}
+    </div>
+  );
+}
+
 /** Fades sections in as they scroll into view. Content stays visible without JavaScript. */
 function useReveal() {
   useEffect(() => {
@@ -265,6 +311,8 @@ function useReveal() {
 
 export default function SystemLanding() {
   useReveal();
+  const steps = useSwipe<HTMLDivElement>();
+  const plans = useSwipe<HTMLUListElement>();
 
   return (
     <div className="sys">
@@ -374,7 +422,7 @@ export default function SystemLanding() {
               </div>
             </div>
           </div>
-          <div className="sys-steps">
+          <div className="sys-steps" ref={steps.ref}>
             {STEPS.map((step, i) => (
               <article className="sys-step" key={step.kicker} data-reveal>
                 <div className="sys-step__copy">
@@ -389,6 +437,7 @@ export default function SystemLanding() {
               </article>
             ))}
           </div>
+          <SwipeDots count={STEPS.length} active={steps.active} go={steps.go} label="צעד" />
         </div>
       </section>
 
@@ -414,7 +463,7 @@ export default function SystemLanding() {
             <h2>מסלול לכל צורך</h2>
             <p className="sys-lede">החודש הראשון חינם. מנוי חודשי, ביטול בכל עת.</p>
           </div>
-          <ul className="sys-plans" data-reveal>
+          <ul className="sys-plans" ref={plans.ref} data-reveal>
             {PLANS.map((plan) => (
               <li key={plan.name} className={plan.featured ? "is-featured" : undefined}>
                 {plan.featured && <span className="sys-plans__badge">הכי מקיף</span>}
@@ -447,6 +496,7 @@ export default function SystemLanding() {
               </li>
             ))}
           </ul>
+          <SwipeDots count={PLANS.length} active={plans.active} go={plans.go} label="מסלול" />
         </div>
       </section>
 
