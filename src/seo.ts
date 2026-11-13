@@ -119,7 +119,7 @@ function faqLd(path: string, items: FaqItem[]) {
       name: item.q,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.a,
+        text: item.link ? `${item.a} ${item.link.label}: ${item.link.href}` : item.a,
       },
     })),
   };

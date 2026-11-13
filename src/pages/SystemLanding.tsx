@@ -13,7 +13,7 @@ import {
 import CtaButton from "../components/CtaButton";
 import Faq from "../components/Faq";
 import Logo from "../components/Logo";
-import { IMAGES, SYSTEM_SIGNUP_URL, SYSTEM_VIDEO } from "../content";
+import { ALLOC_TOOL_URL, IMAGES, SYSTEM_SIGNUP_URL, SYSTEM_VIDEO } from "../content";
 
 const PAPERS = [
   { Icon: Landmark, label: "דף בנק" },
@@ -108,6 +108,11 @@ export const FAQ = [
     a: "בנקים: לאומי, הפועלים, דיסקונט ומזרחי טפחות. כרטיסי אשראי: ישראכרט, מקס, כאל ואמריקן אקספרס.",
   },
   {
+    q: "האם המערכת מתאימה גם למי שעובד בשיטת פרופיט פירסט?",
+    a: "כן, המערכת תומכת במבנה החשבונות של פרופיט פירסט. עם סיום קטלוג הנתונים, בדף היעדים תקבלו תמונה מדויקת של אחוזי החלוקה הנוכחיים בעסק שלכם ע״פ פרופיט פירסט, ותוכלו לקבוע את יעדי החלוקה שלכם. בלוח הבקרה תוכלו לעקוב אחרי ההתקדמות שלכם בהגעה ליעדים. לבעלי עסקים שפועלים ע״פ פרופיט פירסט מומלץ לנסות גם את המערכת לחישוב חלוקות שנמצאת",
+    link: { label: "כאן", href: ALLOC_TOOL_URL },
+  },
+  {
     q: "המערכת מתאימה גם למשק בית?",
     a: "כן. באותה מערכת מנהלים את העסק וגם את משק הבית, כל אחד עם קטגוריות, יעדים ולוח בקרה משלו, ועוברים ביניהם בלחיצה. המסלול הבסיסי כולל עסק אחד ומשק בית אחד.",
   },
@@ -121,7 +126,7 @@ export const FAQ = [
   },
 ];
 
-function TrialButton({ label = "להתחיל — החודש הראשון חינם" }: { label?: string }) {
+function TrialButton({ label = "להתחיל עכשיו" }: { label?: string }) {
   return (
     <a className="cta-btn" href={SYSTEM_SIGNUP_URL}>
       <span className="cta-btn__arrow" aria-hidden="true" />
@@ -311,9 +316,8 @@ export default function SystemLanding() {
             </h2>
             <p className="sys-lede">
               הנתונים מפוזרים בכמה מקומות, והשאלה הכי פשוטה נשארת בלי תשובה.
-              <br />
-              הגיע הזמן לקחת שליטה.
             </p>
+            <p className="sys-chaos__punch">הגיע הזמן לקחת שליטה.</p>
           </div>
           <div className="sys-chaos__visual" aria-hidden="true">
             <div className="sys-chaos__pile">
@@ -347,8 +351,12 @@ export default function SystemLanding() {
         </div>
       </section>
 
-      <section className="sys-section sys-section--soft sys-section--band">
+      <section className="sys-section" id="how">
         <div className="container">
+          <div className="sys-head" data-reveal>
+            <p className="sys-kicker">איך זה עובד?</p>
+            <h2>3 צעדים לתמונה אחת ברורה</h2>
+          </div>
           <div className="sys-both" data-reveal>
             <div className="sys-both__item">
               <Briefcase size={26} aria-hidden="true" />
@@ -365,15 +373,6 @@ export default function SystemLanding() {
                 <p>באותה מערכת, עם קטגוריות, יעדים ולוח בקרה משלו.</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="sys-section" id="how">
-        <div className="container">
-          <div className="sys-head" data-reveal>
-            <p className="sys-kicker">איך זה עובד?</p>
-            <h2>3 צעדים לתמונה אחת ברורה</h2>
           </div>
           <div className="sys-steps">
             {STEPS.map((step, i) => (
@@ -466,7 +465,6 @@ export default function SystemLanding() {
             <span>תוצאות טובות יותר.</span>
           </h2>
           <TrialButton />
-          <p className="sys-closing__fine">החודש הראשון חינם · ביטול בכל עת</p>
         </div>
       </section>
     </div>

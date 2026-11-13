@@ -12,9 +12,9 @@ Keep these paths and nav labels:
 | Profit First | `/profit-first` | רווח לפני הכל |
 | Fractional CFO | `/cfo` | שותף פיננסי |
 | Business simulation | `/business-game` | משחקים עסקים |
+| Cash-flow app | `/system` | מערכת ניהול תזרים |
 | Contact | `/contact` | צור קשר |
 | Game landing (no nav) | `/hugim` | — |
-| App landing (no nav) | `/system` | — |
 
 `/mashakim` redirects to `/hugim`. Unknown URLs render the 404 page. Do not redirect them to `/`.
 

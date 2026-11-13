@@ -258,6 +258,18 @@ h3 {
   border-radius: 999px;
   font-weight: 500;
   color: var(--muted);
+  white-space: nowrap;
+}
+
+/* Six nav items: tighten them before the mobile menu takes over at 980px */
+@media (max-width: 1120px) {
+  .nav {
+    gap: 2px;
+  }
+
+  .nav__link {
+    padding: 8px 7px;
+  }
 }
 
 .nav__link:hover,
@@ -1704,6 +1716,12 @@ h3 {
   padding: 0 20px 20px;
   color: var(--muted);
   white-space: pre-line;
+}
+
+.faq__a a {
+  color: var(--teal-text);
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .faq__item.is-open .faq__a {
@@ -5432,10 +5450,6 @@ h3 {
   background: var(--gray);
 }
 
-.sys .sys-section--band {
-  padding: 56px 0;
-}
-
 .sys-section--navy {
   background:
     radial-gradient(70% 60% at 50% 0%, rgba(110, 200, 200, 0.16), transparent 70%),
@@ -5765,6 +5779,13 @@ h3 {
   font-size: clamp(1.6rem, 2.7vw, 2.1rem);
 }
 
+.sys-chaos__punch {
+  margin-top: 12px;
+  color: var(--navy);
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
 .sys-chaos h2 span {
   display: block;
   color: #9aa8b0;
@@ -5896,6 +5917,7 @@ h3 {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 24px;
+  margin-bottom: 96px;
   padding: 30px 40px;
   border-radius: 20px;
   background: linear-gradient(135deg, var(--navy), #0b3140);
@@ -6201,12 +6223,6 @@ h3 {
 
 .sys-closing h2 span {
   color: var(--teal);
-}
-
-.sys-closing__fine {
-  margin-top: 16px;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.92rem;
 }
 
 @keyframes sys-pulse {

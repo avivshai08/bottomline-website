@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-export type FaqItem = { q: string; a: string };
+export type FaqItem = { q: string; a: string; link?: { label: string; href: string } };
 
 export default function Faq({
   items,
@@ -36,6 +36,14 @@ export default function Faq({
                 </button>
                 <div id={panelId} className="faq__a">
                   {item.a}
+                  {item.link && (
+                    <>
+                      {" "}
+                      <a href={item.link.href} target="_blank" rel="noreferrer">
+                        {item.link.label}
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
             );

@@ -7,6 +7,7 @@
 - **שותף פיננסי** — fractional / outsourced CFO.
 - **רווח לפני הכל** — Profit First method, book, and allocation tool.
 - **משחקים עסקים** — facilitated business-simulation programs.
+- **מערכת ניהול תזרים** — the Bottom line cash-flow app (`/system`, app.bottomline.finance).
 
 Home (`/`) is the About page. Contact is `aviv@bottomline.finance`.
 

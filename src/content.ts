@@ -3,6 +3,7 @@ export const NAV = [
   { to: "/profit-first", label: "רווח לפני הכל" },
   { to: "/cfo", label: "שותף פיננסי" },
   { to: "/business-game", label: "משחקים עסקים" },
+  { to: "/system", label: "מערכת ניהול תזרים" },
   { to: "/contact", label: "צור קשר" },
 ] as const;
 

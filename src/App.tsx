@@ -9,23 +9,20 @@ import GameLanding from "./pages/GameLanding";
 import SystemLanding from "./pages/SystemLanding";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import { SYSTEM_SIGNUP_URL } from "./content";
 
 export default function App() {
   return (
     <Routes>
       <Route path="/mashakim" element={<Navigate to="/hugim" replace />} />
-      <Route element={<LandingLayout cta={{ label: "להרשמה", href: "#register" }} />}>
+      <Route element={<LandingLayout />}>
         <Route path="/hugim" element={<GameLanding />} />
-      </Route>
-      <Route element={<LandingLayout cta={{ label: "חודש ראשון חינם", href: SYSTEM_SIGNUP_URL }} />}>
-        <Route path="/system" element={<SystemLanding />} />
       </Route>
       <Route element={<Layout />}>
         <Route path="/" element={<About />} />
         <Route path="/profit-first" element={<ProfitFirst />} />
         <Route path="/cfo" element={<Cfo />} />
         <Route path="/business-game" element={<BusinessGame />} />
+        <Route path="/system" element={<SystemLanding />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Route>
