@@ -1,48 +1,26 @@
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
-  BarChart3,
   Briefcase,
   Check,
   CreditCard,
-  Database,
   FileSpreadsheet,
   Home,
   Landmark,
   Maximize2,
   Play,
   Receipt,
-  SlidersHorizontal,
-  Target,
 } from "lucide-react";
 import CtaButton from "../components/CtaButton";
 import Faq from "../components/Faq";
 import Logo from "../components/Logo";
 import { IMAGES, SYSTEM_SIGNUP_URL, SYSTEM_VIDEO } from "../content";
 
-const INSTITUTIONS = [
-  "בנק לאומי",
-  "בנק הפועלים",
-  "בנק דיסקונט",
-  "מזרחי טפחות",
-  "ישראכרט",
-  "מקס",
-  "כאל",
-  "אמריקן אקספרס",
-];
-
 const PAPERS = [
   { Icon: Landmark, label: "דף בנק" },
   { Icon: CreditCard, label: "פירוט אשראי" },
   { Icon: FileSpreadsheet, label: "קובץ אקסל" },
   { Icon: Receipt, label: "קבלות" },
-];
-
-const AREAS = [
-  { Icon: SlidersHorizontal, title: "ההגדרות שלי", text: "העסקים ומשק הבית — עוסק פטור, עוסק מורשה או חברה." },
-  { Icon: Database, title: "הנתונים שלי", text: "דפי הבנק וכרטיסי האשראי, מסודרים ומסווגים." },
-  { Icon: Target, title: "היעדים שלי", text: "תקציב חודשי להכנסות ולהוצאות." },
-  { Icon: BarChart3, title: "התוצאות שלי", text: "לוח בקרה עם התמונה הפיננסית המלאה." },
 ];
 
 const STEPS = [
@@ -103,17 +81,21 @@ const PLANS = [
     name: "מתקדם",
     price: "139",
     scope: "לכמה עסקים",
-    features: ["עד 5 עסקים ועד 5 משקי בית", "כל מה שיש במסלול הבסיסי", "מעבר בין העסקים בלחיצה"],
+    features: ["כל מה שיש במסלול הבסיסי", "עד 5 עסקים ועד 5 משקי בית", "מעבר בין העסקים בלחיצה"],
     featured: true,
   },
   {
     name: "יועץ",
     scope: "לרואי חשבון וליועצים",
-    features: ["ליווי כמה לקוחות במערכת אחת", "גישה לנתונים שהלקוח שיתף איתכם"],
+    features: ["כל מה שיש במסלול המתקדם", "ליווי כמה לקוחות במערכת אחת", "גישה לנתונים שהלקוח שיתף איתכם"],
   },
 ];
 
 export const FAQ = [
+  {
+    q: "למי זה מתאים?",
+    a: "לבעלי עסקים — עוסק פטור, עוסק מורשה או חברה — שרוצים לדעת כמה באמת נשאר להם בסוף החודש, ולמי שרוצה לנהל באותה מערכת גם את התקציב של משק הבית. מסלול יועץ מיועד לרואי חשבון וליועצים שמלווים כמה לקוחות.",
+  },
   {
     q: "כמה זה עולה?",
     a: "מסלול בסיסי — 69 ₪ לחודש. מסלול מתקדם — 139 ₪ לחודש. בשני המסלולים החודש הראשון חינם, ואפשר לבטל בכל עת. למסלול יועץ — צרו קשר לפרטים.",
@@ -332,16 +314,6 @@ export default function SystemLanding() {
           </div>
           <DemoVideo />
         </div>
-        <div className="sys-banks">
-          <div className="container sys-banks__inner">
-            <span className="sys-banks__label">עובדת עם</span>
-            <ul>
-              {INSTITUTIONS.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </section>
 
       <section className="sys-section">
@@ -389,24 +361,8 @@ export default function SystemLanding() {
         </div>
       </section>
 
-      <section className="sys-section sys-section--soft">
+      <section className="sys-section sys-section--soft sys-section--band">
         <div className="container">
-          <div className="sys-head" data-reveal>
-            <p className="sys-kicker">הכירו את Bottom line</p>
-            <h2>ארבעה תחומים. תמונה פיננסית אחת.</h2>
-          </div>
-          <ol className="sys-areas" data-reveal>
-            {AREAS.map(({ Icon, title, text }, i) => (
-              <li key={title}>
-                <span className="sys-areas__num">0{i + 1}</span>
-                <span className="sys-areas__icon">
-                  <Icon size={24} aria-hidden="true" />
-                </span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </li>
-            ))}
-          </ol>
           <div className="sys-both" data-reveal>
             <div className="sys-both__item">
               <Briefcase size={26} aria-hidden="true" />
@@ -431,7 +387,7 @@ export default function SystemLanding() {
         <div className="container">
           <div className="sys-head" data-reveal>
             <p className="sys-kicker">איך זה עובד?</p>
-            <h2>שלושה צעדים לתמונה ברורה</h2>
+            <h2>3 צעדים לתמונה אחת ברורה</h2>
           </div>
           <div className="sys-steps">
             {STEPS.map((step, i) => (
@@ -454,7 +410,8 @@ export default function SystemLanding() {
       <section className="sys-section sys-section--navy">
         <div className="container">
           <div className="sys-head" data-reveal>
-            <p className="sys-kicker">04 · רואים</p>
+            <p className="sys-step__num">04</p>
+            <p className="sys-kicker">רואים</p>
             <h2>לוח בקרה פיננסי — במבט אחד</h2>
             <p className="sys-lede">ארבע לשוניות, תמונה מלאה. לחצו כדי להציץ.</p>
           </div>
