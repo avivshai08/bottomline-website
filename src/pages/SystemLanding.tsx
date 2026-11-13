@@ -8,7 +8,6 @@ import {
   Home,
   Landmark,
   Maximize2,
-  Play,
   Receipt,
 } from "lucide-react";
 import CtaButton from "../components/CtaButton";
@@ -94,7 +93,7 @@ const PLANS = [
 export const FAQ = [
   {
     q: "למי זה מתאים?",
-    a: "לבעלי עסקים — עוסק פטור, עוסק מורשה או חברה — שרוצים לדעת כמה באמת נשאר להם בסוף החודש, ולמי שרוצה לנהל באותה מערכת גם את התקציב של משק הבית. מסלול יועץ מיועד לרואי חשבון וליועצים שמלווים כמה לקוחות.",
+    a: "לכל מי שרוצה לקבל בהירות ושליטה על הכספים שלו, בין אם בעסק ובין אם בבית: לבעלי עסקים — עוסק פטור, עוסק מורשה או חברה — שרוצים לדעת כמה באמת נשאר להם בסוף החודש, ולמי שרוצה לנהל באותה מערכת גם את התקציב של משק הבית. מסלול יועץ מיועד לרואי חשבון וליועצים שמלווים כמה לקוחות.",
   },
   {
     q: "כמה זה עולה?",
@@ -152,17 +151,10 @@ type FullscreenVideo = HTMLVideoElement & { webkitEnterFullscreen?: () => void }
 
 function DemoVideo() {
   const ref = useRef<FullscreenVideo>(null);
-  const [started, setStarted] = useState(false);
-
-  function play() {
-    setStarted(true);
-    void ref.current?.play();
-  }
 
   function fullscreen() {
     const video = ref.current;
     if (!video) return;
-    play();
     if (typeof video.requestFullscreen === "function") void video.requestFullscreen();
     else video.webkitEnterFullscreen?.();
   }
@@ -175,19 +167,12 @@ function DemoVideo() {
             ref={ref}
             src={SYSTEM_VIDEO}
             poster={IMAGES.systemVideoPoster}
-            controls={started}
+            autoPlay
+            muted
+            loop
+            controls
             playsInline
-            preload="metadata"
-            onPlay={() => setStarted(true)}
           />
-          {!started && (
-            <button type="button" className="sys-video__play" onClick={play}>
-              <span className="sys-video__play-icon">
-                <Play size={26} fill="currentColor" aria-hidden="true" />
-              </span>
-              <span className="sys-video__play-label">צפו בסרטון · 2:33</span>
-            </button>
-          )}
         </div>
       </AppWindow>
       <button type="button" className="sys-video__full" onClick={fullscreen}>
@@ -326,6 +311,7 @@ export default function SystemLanding() {
             </h2>
             <p className="sys-lede">
               הנתונים מפוזרים בכמה מקומות, והשאלה הכי פשוטה נשארת בלי תשובה.
+              <br />
               הגיע הזמן לקחת שליטה.
             </p>
           </div>
@@ -473,9 +459,11 @@ export default function SystemLanding() {
         <div className="container sys-closing__inner" data-reveal>
           <Logo className="sys-closing__mark" />
           <h2>
-            שליטה פיננסית טובה יותר.
+            שליטה פיננסית טובה יותר,
             <br />
-            <span>החלטות טובות יותר.</span>
+            החלטות טובות יותר,
+            <br />
+            <span>תוצאות טובות יותר.</span>
           </h2>
           <TrialButton />
           <p className="sys-closing__fine">החודש הראשון חינם · ביטול בכל עת</p>
