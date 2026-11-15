@@ -602,7 +602,7 @@ export default function ProfitFirst() {
           </div>
         </section>
 
-        <section className="home-drawing-section">
+        <section className="home-drawing-section" id="alloc-tool">
           <div className="container">
             <div className="alloc-tool">
               <h2>עובדים עם פרופיט פירסט ועדיין עושים חלוקות באקסל?</h2>

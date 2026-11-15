@@ -4,11 +4,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Seo from "./Seo";
 
+/** New page → top, unless the link points at a section (e.g. /profit-first#alloc-tool). */
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    const target = hash && document.getElementById(hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
   return null;
 }
 

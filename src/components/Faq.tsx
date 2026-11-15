@@ -39,7 +39,7 @@ export default function Faq({
                   {item.link && (
                     <>
                       {" "}
-                      <a href={item.link.href} target="_blank" rel="noreferrer">
+                      <a href={item.link.href}>
                         {item.link.label}
                       </a>
                     </>

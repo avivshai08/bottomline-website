@@ -13,7 +13,7 @@ import {
 import CtaButton from "../components/CtaButton";
 import Faq from "../components/Faq";
 import Logo from "../components/Logo";
-import { ALLOC_TOOL_URL, IMAGES, SYSTEM_SIGNUP_URL, SYSTEM_VIDEO } from "../content";
+import { IMAGES, SYSTEM_SIGNUP_URL, SYSTEM_VIDEO } from "../content";
 
 const PAPERS = [
   { Icon: Landmark, label: "דף בנק" },
@@ -110,7 +110,7 @@ export const FAQ = [
   {
     q: "האם המערכת מתאימה גם למי שעובד בשיטת פרופיט פירסט?",
     a: "כן, המערכת תומכת במבנה החשבונות של פרופיט פירסט. עם סיום קטלוג הנתונים, בדף היעדים תקבלו תמונה מדויקת של אחוזי החלוקה הנוכחיים בעסק שלכם ע״פ פרופיט פירסט, ותוכלו לקבוע את יעדי החלוקה שלכם. בלוח הבקרה תוכלו לעקוב אחרי ההתקדמות שלכם בהגעה ליעדים. לבעלי עסקים שפועלים ע״פ פרופיט פירסט מומלץ לנסות גם את המערכת לחישוב חלוקות שנמצאת",
-    link: { label: "כאן", href: ALLOC_TOOL_URL },
+    link: { label: "כאן", href: "/profit-first#alloc-tool" },
   },
   {
     q: "המערכת מתאימה גם למשק בית?",
@@ -184,16 +184,6 @@ function DemoVideo() {
         <Maximize2 size={16} aria-hidden="true" />
         צפייה במסך מלא
       </button>
-      <div className="sys-float sys-float--a" aria-hidden="true">
-        <span className="sys-float__dot sys-float__dot--green" />
-        בהתאם ליעד
-      </div>
-      <div className="sys-float sys-float--b" aria-hidden="true">
-        <svg viewBox="0 0 64 24" className="sys-float__spark">
-          <polyline points="2,20 14,16 24,18 36,10 48,12 62,3" />
-        </svg>
-        עודף תזרימי
-      </div>
     </div>
   );
 }

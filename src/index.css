@@ -381,6 +381,10 @@ h3 {
   align-items: center;
 }
 
+#alloc-tool {
+  scroll-margin-top: var(--header);
+}
+
 .alloc-tool {
   background: var(--navy);
   color: #fff;
@@ -5717,56 +5721,6 @@ h3 {
   color: var(--white);
 }
 
-.sys-float {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: 12px;
-  background: var(--white);
-  color: var(--navy);
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  animation: sys-float 6s ease-in-out infinite;
-}
-
-.sys-float--a {
-  top: 16%;
-  right: -34px;
-}
-
-.sys-float--b {
-  bottom: 24%;
-  left: -40px;
-  animation-delay: -3s;
-}
-
-.sys-float__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.sys-float__dot--green {
-  background: var(--sys-green);
-  box-shadow: 0 0 0 4px rgba(34, 160, 107, 0.18);
-}
-
-.sys-float__spark {
-  width: 54px;
-  height: 20px;
-}
-
-.sys-float__spark polyline {
-  fill: none;
-  stroke: var(--sys-green);
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 /* Chaos → clarity */
 .sys-chaos {
   display: grid;
@@ -6235,16 +6189,6 @@ h3 {
   }
 }
 
-@keyframes sys-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
 @keyframes sys-fade {
   from {
     opacity: 0;
@@ -6258,7 +6202,6 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   .sys-pill::before,
-  .sys-float,
   .sys-tour__shot {
     animation: none;
   }
@@ -6316,12 +6259,6 @@ h3 {
     grid-template-columns: 1fr;
     justify-items: start;
     padding: 28px;
-  }
-}
-
-@media (max-width: 900px) {
-  .sys-float {
-    display: none;
   }
 }
 
