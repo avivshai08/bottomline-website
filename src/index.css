@@ -448,6 +448,39 @@ h3 {
   color: var(--teal-text);
 }
 
+.alloc-tool__pricing {
+  margin: 0 0 22px;
+}
+
+.alloc-tool__price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1;
+}
+
+.alloc-tool__num {
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+
+.alloc-tool__cur {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.alloc-tool__per {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.alloc-tool__free {
+  margin-top: 8px;
+  color: var(--teal-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 .alloc-tool__actions {
   display: flex;
   flex-wrap: wrap;

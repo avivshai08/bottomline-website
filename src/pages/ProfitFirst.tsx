@@ -12,7 +12,6 @@ import {
   TrendingUp,
   Wallet,
 } from "lucide-react";
-import CtaButton from "../components/CtaButton";
 import CtaDrawing from "../components/CtaDrawing";
 import Faq from "../components/Faq";
 import QuickAssessment from "../components/QuickAssessment";
@@ -642,6 +641,14 @@ export default function ProfitFirst() {
                     </li>
                   </ul>
                   <p className="alloc-tool__tagline">קל. פשוט. עובד.</p>
+                  <div className="alloc-tool__pricing">
+                    <p className="alloc-tool__price">
+                      <span className="alloc-tool__num">25</span>
+                      <span className="alloc-tool__cur">₪</span>
+                      <span className="alloc-tool__per">+ מע&quot;מ לחודש</span>
+                    </p>
+                    <p className="alloc-tool__free">חודש ראשון חינם</p>
+                  </div>
                   <div className="alloc-tool__actions">
                     <a
                       className="cta-btn"
@@ -650,9 +657,17 @@ export default function ProfitFirst() {
                       rel="noreferrer"
                     >
                       <span className="cta-btn__arrow" aria-hidden="true" />
-                      לכלי החלוקה
+                      להתחיל בחינם
                     </a>
-                    <CtaButton className="cta-btn--ghost">לקבלת גישה</CtaButton>
+                    <a
+                      className="cta-btn cta-btn--ghost"
+                      href={ALLOC_TOOL_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span className="cta-btn__arrow" aria-hidden="true" />
+                      כניסה לכלי החלוקה
+                    </a>
                   </div>
                 </div>
                 <a

@@ -15,7 +15,7 @@ Offers:
 
 2. רווח לפני הכל — Profit First in Hebrew (https://bottomline.finance/profit-first)
    Method from Mike Michalowicz’s book, Hebrew edition “רווח לפני הכל”: https://www.profitfirst.co.il/%d7%94%d7%a1%d7%a4%d7%a8-%d7%a8%d7%95%d7%95%d7%97-%d7%9c%d7%a4%d7%a0%d7%99-%d7%94%d7%9b%d7%9c/
-   Allocation tool: https://app.profitfirst.finance
+   Allocation tool (25 ILS + VAT/month, first month free; sign in or sign up with Google): https://app.profitfirst.finance
    Formula shift: from Sales − Expenses = Profit to Sales − Profit = Expenses. Profit is a planned target, not a leftover. Implementation is more than opening five bank accounts.
 
 3. משחקים עסקים — business simulation programs (https://bottomline.finance/business-game)
