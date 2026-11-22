@@ -253,7 +253,7 @@ const PAGES: Record<string, PageSeo> = {
     path: "/system",
     title: "מערכת Bottom line — ניהול תזרים מזומנים לעסק ולמשק הבית",
     description:
-      "מעלים דפי בנק וכרטיסי אשראי, מאשרים סיווג בלחיצה, קובעים יעדים ורואים בלוח בקרה אחד כמה באמת נשאר בסוף החודש. מ-79 ₪ לחודש, החודש הראשון חינם.",
+      "מעלים דפי בנק וכרטיסי אשראי, מאשרים סיווג בלחיצה, קובעים יעדים ורואים בלוח בקרה אחד כמה באמת נשאר בסוף החודש. מ-69 ₪ לחודש, החודש הראשון חינם.",
     ogImage: abs(IMAGES.systemSnapshot),
     robots: "index, follow",
     jsonLd: graph(
@@ -270,8 +270,8 @@ const PAGES: Record<string, PageSeo> = {
           operatingSystem: "Web",
           inLanguage: "he",
           offers: [
-            { "@type": "Offer", name: "בסיסי", price: "79", priceCurrency: "ILS" },
-            { "@type": "Offer", name: "מתקדם", price: "139", priceCurrency: "ILS" },
+            { "@type": "Offer", name: "בסיסי", price: "69", priceCurrency: "ILS" },
+            { "@type": "Offer", name: "מתקדם", price: "129", priceCurrency: "ILS" },
           ],
         },
         {
